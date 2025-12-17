@@ -43,12 +43,12 @@ When you run `/conductor:setup`, Conductor helps you define the core components 
 - **Workflow**: Set team preferences (e.g. TDD, commit strategy). Uses [workflow.md](templates/workflow.md) as a customizable template.
 
 **Generated Artifacts:**
-- `.conductor/product.md`
-- `.conductor/product-guidelines.md`
-- `.conductor/tech-stack.md`
-- `.conductor/workflow.md`
-- `.conductor/code_styleguides/`
-- `.conductor/plan.md`
+- `conductor/product.md`
+- `conductor/product-guidelines.md`
+- `conductor/tech-stack.md`
+- `conductor/workflow.md`
+- `conductor/code_styleguides/`
+- `conductor/plan.md`
 
 ```bash
 /conductor:setup
@@ -62,9 +62,9 @@ When you’re ready to take on a new feature or bug fix, run `/conductor:newTrac
 - **Plan**: An actionable to-do list containing phases, tasks, and sub-tasks.
 
 **Generated Artifacts:**
-- `.conductor/tracks/<track_id>/spec.md`
-- `.conductor/tracks/<track_id>/plan.md`
-- `.conductor/tracks/<track_id>/metadata.json`
+- `conductor/tracks/<track_id>/spec.md`
+- `conductor/tracks/<track_id>/plan.md`
+- `conductor/tracks/<track_id>/metadata.json`
 
 ```bash
 /conductor:newTrack
@@ -77,8 +77,8 @@ When you’re ready to take on a new feature or bug fix, run `/conductor:newTrac
 Once you approve the plan, run `/conductor:implement`. Your coding agent then works through the `plan.md` file, checking off tasks as it completes them.
 
 **Updated Artifacts:**
-- `.conductor/plan.md` (Status updates)
-- `.conductor/tracks/<track_id>/plan.md` (Status updates)
+- `conductor/plan.md` (Status updates)
+- `conductor/tracks/<track_id>/plan.md` (Status updates)
 - Project context files (Synchronized on completion)
 
 ```bash
@@ -106,10 +106,10 @@ During implementation, you can also:
 
 | Command | Description | Artifacts |
 | :--- | :--- | :--- |
-| `/conductor:setup` | Scaffolds the project and sets up the Conductor environment. Run this once per project. | `.conductor/product.md`<br>`.conductor/tech-stack.md`<br>`.conductor/workflow.md`<br>`.conductor/plan.md` |
-| `/conductor:newTrack` | Starts a new feature or bug track. Generates `spec.md` and `plan.md`. | `.conductor/tracks/<id>/spec.md`<br>`.conductor/tracks/<id>/plan.md`<br>`.conductor/plan.md` |
-| `/conductor:implement` | Executes the tasks defined in the current track's plan. | `.conductor/plan.md`<br>`.conductor/tracks/<id>/plan.md` |
-| `/conductor:status` | Displays the current progress of the main plan and active tracks. | Reads `.conductor/plan.md` |
+| `/conductor:setup` | Scaffolds the project and sets up the Conductor environment. Run this once per project. | `conductor/product.md`<br>`conductor/tech-stack.md`<br>`conductor/workflow.md`<br>`conductor/plan.md` |
+| `/conductor:newTrack` | Starts a new feature or bug track. Generates `spec.md` and `plan.md`. | `conductor/tracks/<id>/spec.md`<br>`conductor/tracks/<id>/plan.md`<br>`conductor/plan.md` |
+| `/conductor:implement` | Executes the tasks defined in the current track's plan. | `conductor/plan.md`<br>`conductor/tracks/<id>/plan.md` |
+| `/conductor:status` | Displays the current progress of the main plan and active tracks. | Reads `conductor/plan.md` |
 | `/conductor:revert` | Reverts a track, phase, or task by analyzing git history. | Reverts git history |
 
 ## Resources
